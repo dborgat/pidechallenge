@@ -1,0 +1,19 @@
+.mainContainer {
+  height: 10vh;
+  width: 100vw;
+  background-color: rgb(103, 162, 103);
+  display: flex;
+  justify-content: space-between;
+}
+.menuIcon {
+  color: #ffff5b;
+  height: 2.5rem;
+  width: 6rem;
+  margin-top: 1rem;
+}
+.shopIcon {
+  color: #efefe2;
+  height: 4rem;
+  width: 3rem;
+  margin-right: 3rem;
+}
