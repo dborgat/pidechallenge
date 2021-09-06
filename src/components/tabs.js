@@ -5,12 +5,14 @@ import FoodCard from "./foodCard";
 import filterProducts from "../utils/filter";
 
 const SwipeableTab = ({ products }) => {
+  //recibo los productos desestructurados y tenemos 4 states locales con las respectivas categorias donde vamos a tener el array con los productos filtrados
+
   const [selectedTab, setSelectedTab] = useState("SANDWICH");
   const [sandwich, setSandwich] = useState([]);
   const [pizzas, setPizzas] = useState([]);
   const [fritas, setFritas] = useState([]);
   const [combos, setCombos] = useState([]);
-
+  //en este useEffect se ejecuta la funcion filter que creamos para poder setear los states locales con los productos correspondientes
   useEffect(() => {
     setSandwich(filterProducts(products, 9));
     setPizzas(filterProducts(products, 7));
@@ -33,12 +35,15 @@ const SwipeableTab = ({ products }) => {
       <Tab label="SANDWICH" key={0}>
         <div className={styles.cardsMainContainer}>
           {sandwich?.map(
-            ({
-              descriProducto,
-              imagenProducto,
-              nombreProducto,
-              precioProducto,
-            },i) => (
+            (
+              {
+                descriProducto,
+                imagenProducto,
+                nombreProducto,
+                precioProducto,
+              },
+              i
+            ) => (
               <FoodCard
                 descriProducto={descriProducto}
                 imagenProducto={imagenProducto}
@@ -53,12 +58,15 @@ const SwipeableTab = ({ products }) => {
       <Tab label="PIZZAS" key={1}>
         <div className={styles.cardsMainContainer}>
           {pizzas?.map(
-            ({
-              descriProducto,
-              imagenProducto,
-              nombreProducto,
-              precioProducto,
-            },i) => (
+            (
+              {
+                descriProducto,
+                imagenProducto,
+                nombreProducto,
+                precioProducto,
+              },
+              i
+            ) => (
               <FoodCard
                 descriProducto={descriProducto}
                 imagenProducto={imagenProducto}
@@ -73,12 +81,15 @@ const SwipeableTab = ({ products }) => {
       <Tab label="FRITAS" key={2}>
         <div className={styles.cardsMainContainer}>
           {fritas?.map(
-            ({
-              descriProducto,
-              imagenProducto,
-              nombreProducto,
-              precioProducto,
-            },i) => (
+            (
+              {
+                descriProducto,
+                imagenProducto,
+                nombreProducto,
+                precioProducto,
+              },
+              i
+            ) => (
               <FoodCard
                 descriProducto={descriProducto}
                 imagenProducto={imagenProducto}
@@ -93,12 +104,15 @@ const SwipeableTab = ({ products }) => {
       <Tab label="COMBOS" key={3}>
         <div className={styles.cardsMainContainer}>
           {combos?.map(
-            ({
-              descriProducto,
-              imagenProducto,
-              nombreProducto,
-              precioProducto,
-            },i) => (
+            (
+              {
+                descriProducto,
+                imagenProducto,
+                nombreProducto,
+                precioProducto,
+              },
+              i
+            ) => (
               <FoodCard
                 descriProducto={descriProducto}
                 imagenProducto={imagenProducto}
@@ -115,4 +129,3 @@ const SwipeableTab = ({ products }) => {
 };
 
 export default SwipeableTab;
-

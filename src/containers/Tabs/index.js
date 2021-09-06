@@ -7,10 +7,12 @@ const Sections = () => {
   const [info, setInfo] = useState(null);
   const [products, setProducts] = useState(null);
 
+  //cuando se monta el componente hago un fetch para poder setear la info del json en un estate local.
   useEffect(() => {
     getData(setInfo);
   }, []);
 
+  //cuando tengo la info seteo los productos en un state local y luego se lo paso por props en la linea 22.
   useEffect(() => {
     info && setProducts(info.Productos);
   }, [info]);

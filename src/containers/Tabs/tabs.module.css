@@ -44,7 +44,9 @@
 .description {
   font-size: 0.65rem;
   text-transform: uppercase;
+  0.75rem
 }
+
 .priceContainer {
   background-color: rgb(179, 69, 169);
   border-top-right-radius: 15px;
@@ -140,5 +142,8 @@
   .heartIcoin {
     height: 2.8rem;
     width: 1.5em;
+  }
+  .description {
+    font-size: 0.75rem;
   }
 }
